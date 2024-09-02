@@ -1,0 +1,26 @@
+@MeterReader_HostAddress = http://localhost:5015
+
+# Get all meter readings
+GET {{MeterReader_HostAddress}}/api/meterreading/meter-readings
+Accept: application/json
+
+###
+
+# Upload meter readings via CSV
+POST {{MeterReader_HostAddress}}/api/meterreading/meter-readings/upload
+Content-Type: text/csv
+
+# Example CSV content
+# AccountId,MeterReadingDateTime,MeterReadValue
+1,2023-10-01T12:00:00,100
+2,2023-10-01T12:00:00,200
+
+###
+
+# Delete all meter readings
+DELETE {{MeterReader_HostAddress}}/api/meterreading/meter-readings
+
+###
+
+# Get all accounts
+GET {{MeterReader_HostAddress}}/api/meterreading/accounts
